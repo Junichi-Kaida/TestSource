@@ -15,8 +15,7 @@ public class paizaTestC {
 
   /** * @param args */
   public static void main(String[] args) {
-
-    testC019();
+    //testC019();
   }
 
   /**
@@ -87,6 +86,50 @@ public class paizaTestC {
     }
   }
 
+  /**
+   * C024:ミニ・コンピュータ
+   */
+  private static void testC024() {
+    Scanner sc = new Scanner(System.in);
+    int variable1 = 0;
+    int variable2 = 0;
+    ArrayList<String> execList = new ArrayList<String>();
+
+    // 個数
+    int inputCnt = sc.nextInt();
+    Integer[] variable1List = new Integer[inputCnt + 1];
+    Integer[] variable2List = new Integer[inputCnt + 1];
+    
+    for (int i = 0; i < inputCnt; i++) {
+      execList.add(sc.next());
+      variable1List[i] = sc.nextInt();
+      if (execList.get(i).equals("SET") && sc.hasNext()) {
+        variable2List[i] = sc.nextInt();
+      }
+    }
+    sc.close();
+    
+    for (int i=0; i < execList.size(); i++) {
+      String execStr = execList.get(i);
+      if (!execStr.isEmpty() && execStr.equals("SET")) {
+        // SET i a : 変数 i に値 a を代入する (i = 1, 2)
+        if (variable1List[i] == 1) {
+          variable1 = variable2List[i];
+        } else if (variable1List[i] == 2) {
+          variable2 = variable2List[i];
+        }
+      } else if (!execStr.isEmpty() && execStr.equals("ADD")) {
+        // ADD a :「変数 1 の値 + a」を計算し、計算結果を変数 2 に代入する
+        variable2 = variable1 + variable1List[i];
+      } else if (!execStr.isEmpty() && execStr.equals("SUB")) {
+        // SUB a :「変数 1 の値 - a」を計算し、計算結果を変数 2 に代入する
+        variable2 = variable1 - variable1List[i];
+      }
+    }
+    System.out.print(variable1 + " " + variable2);
+    
+  }
+  
   /**
    * C030:白にするか黒にするか
    */

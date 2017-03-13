@@ -6,7 +6,7 @@ public class paizaTestD {
 
   /** * @param args */
   public static void main(String[] args) {
-    testD059();
+    
   }  
   
   /**
@@ -39,6 +39,48 @@ public class paizaTestD {
     }
   }
 
+  /**
+   * D055:ワインのキャッチコピー
+   */
+  private static void testD055() {
+    Scanner sc = new Scanner(System.in);
+    String line = sc.nextLine();
+    
+    System.out.println("Best in " + line);
+  }
+  
+  /**
+   * D056:かまくらづくり
+   */
+  private static void testD056() {
+    Scanner sc = new Scanner(System.in);
+    int r1 = sc.nextInt();
+    int r2 = sc.nextInt();
+    Double m = Math.pow(r1, 3) - Math.pow(r2, 3);
+    int i = m.intValue();
+    System.out.println(i);
+  }
+
+  /**
+   * D058:初詣で
+   */
+  private static void testD058() {
+    Scanner sc = new Scanner(System.in);
+    int reiCnt1 = sc.nextInt();
+    int hakuCnt = sc.nextInt();
+    int reiCnt2 = sc.nextInt();
+    String outStr = "";
+    for (int i=0; i < reiCnt1; i++) {
+      outStr = outStr + "A";
+    }
+    for (int i=0; i < hakuCnt; i++) {
+      outStr = outStr + "B";
+    }
+    for (int i=0; i < reiCnt2; i++) {
+      outStr = outStr + "A";
+    }
+    System.out.println(outStr);
+  }
   /**
    * D059:トランプ占い
    */

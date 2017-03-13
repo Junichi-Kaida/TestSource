@@ -17,7 +17,7 @@ public class TestSource extends Thread {
   
   /** * @param args */
   public static void main(String[] args) {
-    testIterator();
+
 //     //testC019の検証
 //     String perfect = "perfect";
 //     String nearly = "nearly";
@@ -90,117 +90,6 @@ public class TestSource extends Thread {
     } else {
       System.out.println("型桁チェックOK");
     }
-
-  }
-
-  // C030:白にするか黒にするか
-  private static void testC030() {
-    // String[][] inputStr = new String[3][2];
-    // Scanner sc2=null;
-    // for (int i=0; i < 3; i++) {
-    // System.out.println("グレースケールを入力");
-    // sc2 = new Scanner(System.in);
-    // inputStr[i][0] = sc2.next();
-    // inputStr[i][1] = sc2.next();
-    // }
-    // sc2.close();
-
-    System.out.println("大きさを入力");
-    Scanner sc = new Scanner(System.in);
-    int N = sc.nextInt();
-    int M = sc.nextInt();
-
-    String[][] inputStr = new String[N][M];
-    System.out.println("グレースケールを入力");
-
-    for (int i = 0; i < N; i++) {
-      sc = new Scanner(System.in);
-      for (int j = 0; j < M; j++) {
-        if (sc.hasNext()) {
-          inputStr[i][j] = sc.next();
-        }
-      }
-      // inputStr[i][0] = sc.next();
-      // inputStr[i][1] = sc.next();
-    }
-    sc.close();
-    for (int i = 0; i < N; i++) {
-      for (int j = 0; j < M; j++) {
-
-        if (inputStr[i][j] == null) {
-          continue;
-        }
-
-        if (Integer.parseInt(inputStr[i][j]) >= 128) {
-          System.out.print("1");
-        } else if (Integer.parseInt(inputStr[i][j]) < 128) {
-          System.out.print("0");
-        }
-        if (j == M - 1) {
-          System.out.println("");
-        } else if (j < M) {
-          System.out.print(" ");
-        }
-      }
-    }
-
-    // for (int k = 0; k < N; k++) {
-    // if(inputStr[k].equals("128")) {
-    // System.out.print("1");
-    // } else if(inputStr[k].equals("127")) {
-    // System.out.print("0");
-    // }
-    // if (k < N) {
-    // System.out.print(" ");
-    // }
-    // if (k == N-1) {
-    // System.out.println("");
-    // }
-    // }
-
-    // String[] inputStr = {"3 2", "128 127", "127 128", "128 127"};
-    // String[] hwStr = inputStr[0].split(" ");
-    //
-    // for(int i=1; i < inputStr.length; i++) {
-    // String[] colorStr = inputStr[i].split(" ");
-    // if (colorStr.length < 2) {
-    // continue;
-    // }
-    // for(int j=0; j < colorStr.length; j++) {
-    // if(colorStr[j].equals("128")) {
-    // System.out.print("1");
-    // } else if(colorStr[j].equals("127")) {
-    // System.out.print("0");
-    // }
-    // if (j==0) {
-    // System.out.print(" ");
-    // } else {
-    // System.out.println("");
-    // }
-    //
-    // }
-    // }
-    //
-    // String inputStr = "0";
-    // Integer inputInt = Integer.parseInt(inputStr);
-    // if (inputInt >= 1) {
-    // System.out.print(String.valueOf(inputInt * 3));
-    // } else {
-    // System.out.print("1");
-    // }
-
-    // String inputStr = "2 3 5";
-    // String[] input = inputStr.split(" ");
-    // String[] hina = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
-    // Integer hinaIdx = 0;
-    // for (int i=0; i < input.length; i++) {
-    // Integer inputCnt = Integer.parseInt(input[i].toString());
-    // for (int j=0; j < inputCnt; j++) {
-    // System.out.print(hina[hinaIdx]);
-    // hinaIdx++;
-    // }
-    // System.out.println("");
-    // }
   }
 
   /**
